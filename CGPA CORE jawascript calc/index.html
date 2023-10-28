@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CgPA Calculator</title>
+</head>
+<body>
+    <h1>CGPA calculator</h1>
+    <script>
+        
+   function calculationOfGradePoints(marks) {
+    let output = (marks / 100) * 100;
+
+    if (output==50) {
+        return 2.00;
+    } else if (output==51) {
+        return 2.05;
+    } else if (output==52) {l
+        return 2.10;
+    } else if (output==53) {
+        return 2.15;
+    } else if (output==54) {
+        return 2.20;
+    } else if (output==55) {
+        return 2.25;
+    } else if (output==56) {
+        return 2.30;
+    } 
+    else if (output==57) {
+        return 2.35;
+    } 
+    else if (output==58) {
+        return 2.40;
+    } 
+    else if (output==59) {
+        return 2.45;
+    } 
+    else if (output==60) {
+        return 2.50;
+    } 
+    else if (output==61) {
+        return 2.55;
+    } 
+    else if (output==62) {
+        return 2.60;
+    } 
+    else if (output==63) {
+        return 2.65;
+    }
+    else if (output==64) {
+        return 2.70;
+    }
+    else if (output==65) {
+        return 2.75;
+    }
+    else if (output==66) {
+        return 2.80;
+    }
+    else if (output==67) {
+        return 2.85;
+    }
+    else if (output==68) {
+        return 2.90;
+    }
+    else if (output==69) {
+        return 2.95;
+    }
+    else if (output==70) {
+        return 3.00;
+    }
+    else if (output==71) {
+        return 3.05;
+    }
+    else if (output==72) {
+        return 3.10;
+    } else if (output==73) {
+        return 3.15;
+    }
+    else if (output==74) {
+        return 3.20;
+    }
+    else if (output==75) {
+        return 3.25;
+    }
+    else if (output==76) {
+        return 3.30;
+    }
+    else if (output==77) {
+        return 3.35;
+    }
+    else if (output==78) {
+        return 3.40;
+    }
+    else if (output==79) {
+        return 3.45;
+    }
+    else if (output==80) {
+        return 3.50;
+    }
+    else if (output==81) {
+        return 3.55;
+    }
+    else if (output==82) {
+        return 3.60;
+    }
+    else if (output==83) {
+        return 3.65;
+    }
+    else if (output==84) {
+        return 3.70;
+    }
+    else if (output==85) {
+        return 3.75;
+    }
+    else if (output==86) {
+        return 3.80;
+    }
+    else if (output==87) {
+        return 3.85;
+    }
+    else if (output==88) {
+        return 3.90;
+    }
+    else if (output==89) {
+        return 3.95;
+    }
+    else {
+        return 4.00
+    }
+   }
+
+   const creditHoursSem1={
+    introToCompute:4,
+    functionalEnglish:3,
+    calculus_1:3,
+    pak_Studies:3,
+    appliedPhysics:3,
+    psychology:3
+}
+    
+   const creditHoursSem2={
+        Pf:4,
+        communicationSkills:3,
+        Islamiat:3,
+        DiscreteMath:3,
+        DLD:3,
+        stats:3
+    }
+
+    const creditHoursSem3={
+        Entrepreneurship:3,
+        Oop:4,
+        SE:4,
+        compCommunicationNet:3,
+        linearALgebra:3
+    }
+
+    const creditHoursSem4={
+        Accounting:3,
+        Management:3,
+        DB:4,
+        OS:4,
+        DS:4
+    }
+
+    // function to calculate gpa
+    function calculateSemesterGpa(creditHours){
+        let totalCreditHours=0
+        let totalgracePoints=0
+        let Gpa
+    for(let k in creditHours){
+    const marks=parseFloat(prompt(`Enter the Marks of ${k}`))
+    const gradePoints=calculationOfGradePoints(marks)
+    const gracePoint=gradePoints*creditHours[k]
+
+    totalCreditHours+=creditHours[k]
+    totalgracePoints+=gracePoint
+ } 
+ 
+ const semesterGpa=totalgracePoints/totalCreditHours  
+ return { 
+
+    GPA:semesterGpa.toFixed(2),
+    TotalCreditHours:totalCreditHours
+}
+    }
+    
+    // function to count number of subjects in each semester
+    function subjectcount(obj){
+        let count =0
+        for(let key in obj){
+        if(obj[key]){
+        count++
+}
+        }
+        return count
+    }
+
+// result of semester 1
+const semester1GPA = calculateSemesterGpa(creditHoursSem1);
+console.log(`GPA for Semester 1: ${semester1GPA.GPA}`);
+console.log(`Credit hours Earned In Semester1 : ${semester1GPA.TotalCreditHours}`)
+const subJectCountSem1=subjectcount(creditHoursSem1)
+console.log("Subjects in Sem1 : ",subJectCountSem1)
+
+// result of semester 2
+const semester2GPA = calculateSemesterGpa(creditHoursSem2);
+console.log(`GPA for Semester 2: ${semester2GPA.GPA}`);
+console.log(`Credit hours Earned In Semester2 : ${semester2GPA.TotalCreditHours}`)
+const subJectCountSem2=subjectcount(creditHoursSem2)
+console.log("Subjects in Sem2 : ",subJectCountSem2)
+
+// result of semester 3
+const semester3GPA = calculateSemesterGpa(creditHoursSem3);
+console.log(`GPA for Semester 3: ${semester3GPA.GPA}`);
+console.log(`Credit hours Earned In Semester3 : ${semester3GPA.TotalCreditHours}`)
+const subJectCountSem3=subjectcount(creditHoursSem3)
+console.log("Subjects in Sem3 : ",subJectCountSem3)
+
+// result of semester 4
+const semester4GPA = calculateSemesterGpa(creditHoursSem4);
+console.log(`GPA for Semester 4: ${semester4GPA.GPA}`);
+console.log(`Credit hours Earned In Semester4 : ${semester4GPA.TotalCreditHours}`)
+const subJectCountSem4=subjectcount(creditHoursSem4)
+console.log("Subjects in Sem4 : ",subJectCountSem4)
+
+// cumulative GPA / CGPA
+const cumulativeGPA = (parseFloat(semester1GPA.GPA) + parseFloat(semester2GPA.GPA) + parseFloat(semester3GPA.GPA) + parseFloat(semester4GPA.GPA)) / 4;
+console.log(`Cumulative GPA: ${cumulativeGPA.toFixed(2)}`);
+
+// Credit hours Earned so far
+const creditHoursEarnedSoFar =
+semester1GPA.TotalCreditHours+
+semester2GPA.TotalCreditHours+
+semester3GPA.TotalCreditHours+
+semester4GPA.TotalCreditHours
+console.log("Total Credit hours Earned so far",creditHoursEarnedSoFar)
+
+    </script>
+</body>
+</html>
